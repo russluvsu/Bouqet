@@ -1,0 +1,425 @@
+﻿/* =====================================================================
+   Csslogin.css  |  Bouqet sign-in page
+   Fonts are bundled in /Fonts (no external links).
+   Serif headings: Cormorant Garamond.  Body: Inter.
+   ===================================================================== */
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../Fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../Fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../Fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../Fonts/inter-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../Fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+
+:root {
+    --rose: #C07F8E;
+    --rose-button: #A8657A;
+    --rose-button-hover: #965669;
+    --gold: #C9A24B;
+    --gold-light: #F2D27A;
+    --ivory: #FBF7EF;
+    --text: #2A2522;
+    --text-secondary: #6B6058;
+    --border: #E4DCCB;
+    --input-border: #D9CFBF;
+    --sand: #E4DCCB;
+    --error-bg: #F6DDE2;
+    --error-text: #8A3F52;
+    --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--ivory);
+    -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* ---------- Layout ---------- */
+
+.login {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 100vh;
+}
+
+/* ---------- Brand panel ---------- */
+
+.brand {
+    background: var(--rose);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 32px;
+}
+
+.brand-logo {
+    width: 88px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.brand-rule {
+    width: 56px;
+    height: 1px;
+    border: 0;
+    background: var(--gold-light);
+    margin: 18px 0 16px;
+}
+
+.brand-tagline {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.3;
+    max-width: 240px;
+    margin: 0;
+}
+
+/* ---------- Form panel ---------- */
+
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+}
+
+.panel-inner {
+    width: 100%;
+    max-width: 400px;
+}
+
+.gold-rule {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 20px;
+}
+
+.heading {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.1;
+    margin: 0 0 8px;
+}
+
+.subtext {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 28px;
+}
+
+.alert {
+    background: var(--error-bg);
+    color: var(--error-text);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+    .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+.input {
+    display: block;
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+}
+
+    .input:focus {
+        outline: none;
+        border-color: var(--rose-button);
+        box-shadow: 0 0 0 3px rgba(168, 101, 122, 0.18);
+    }
+
+.input-wrap {
+    position: relative;
+}
+
+    .input-wrap .input {
+        padding-right: 68px;
+    }
+
+.show-btn {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    padding: 6px 10px;
+    border: 0;
+    background: transparent;
+    color: var(--rose-button);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.check {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+    .check input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        accent-color: var(--rose-button);
+    }
+
+    .check label {
+        cursor: pointer;
+    }
+
+.link-btn {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--rose-button);
+    font-family: var(--sans);
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.forgot-note {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: -4px 0 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    height: 46px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--rose-button);
+    color: #FFFFFF;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+    .btn-primary:hover {
+        background: var(--rose-button-hover);
+    }
+
+/* ---------- Footer row: note on the left, role toggle on the right ---------- */
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.foot-note {
+    flex: 1;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.toggle {
+    position: relative;
+    flex: 0 0 auto;
+    width: 104px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: 15px;
+    background: var(--sand);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .toggle.is-planner {
+        background: var(--rose-button);
+    }
+
+.toggle-knob {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(42, 37, 34, 0.25);
+    transition: transform 0.2s;
+}
+
+.toggle.is-planner .toggle-knob {
+    transform: translateX(74px);
+}
+
+.toggle-label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+}
+
+.toggle.is-planner .toggle-label {
+    left: 14px;
+    right: auto;
+    color: #FFFFFF;
+}
+
+/* ---------- Narrow screens: brand panel becomes a small header ---------- */
+
+@media (max-width: 800px) {
+    .login {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .brand {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 12px;
+        padding: 14px 20px;
+    }
+
+    .brand-logo {
+        width: 30px;
+        margin: 0;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .brand-rule, .brand-tagline {
+        display: none;
+    }
+
+    .panel {
+        align-items: flex-start;
+        padding: 32px 20px;
+    }
+
+    .heading {
+        font-size: 34px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toggle, .toggle-knob, .btn-primary {
+        transition: none;
+    }
+}

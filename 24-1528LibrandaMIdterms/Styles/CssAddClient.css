@@ -1,0 +1,340 @@
+﻿:root {
+    --rose: #C07F8E;
+    --rose-button: #A8657A;
+    --rose-button-hover: #965669;
+    --gold: #C9A24B;
+    --gold-light: #F2D27A;
+    --ivory: #FBF7EF;
+    --text: #2A2522;
+    --text-secondary: #6B6058;
+    --muted: #8A7F74;
+    --border: #E4DCCB;
+    --input-border: #D9CFBF;
+    --white: #FFFFFF;
+    --sage: #6F9575;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.page-shell {
+    width: min(980px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 44px 0 70px;
+}
+
+.page-header {
+    position: relative;
+    margin-bottom: 38px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+    .back-link:hover {
+        color: var(--rose-button);
+    }
+
+    .back-link span:first-child {
+        font-size: 20px;
+    }
+
+.header-copy {
+    max-width: 680px;
+}
+
+.eyebrow {
+    display: block;
+    color: var(--rose-button);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    margin-bottom: 7px;
+}
+
+.header-copy h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: .95;
+    font-weight: 500;
+    letter-spacing: -.03em;
+}
+
+.header-copy p {
+    margin: 14px 0 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.form-layout {
+    display: grid;
+    gap: 18px;
+}
+
+.form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 28px;
+}
+
+.card-heading {
+    display: flex;
+    gap: 17px;
+    align-items: flex-start;
+    padding-bottom: 23px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.section-number {
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    padding-top: 3px;
+}
+
+.card-heading h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.card-heading p {
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.couple-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.partner-block {
+    padding: 20px;
+    border: 1px solid var(--border);
+    background: #FCFAF5;
+}
+
+.partner-label {
+    display: block;
+    color: var(--rose-button);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .field + .field {
+        margin-top: 20px;
+    }
+
+    .field label {
+        color: var(--text-secondary);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+.text-input {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    outline: none;
+    background: var(--white);
+    color: var(--text);
+    font-size: 14px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+    .text-input:focus {
+        border-color: var(--rose);
+        box-shadow: 0 0 0 3px rgba(192, 127, 142, .12);
+    }
+
+.field-help {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.password-row {
+    display: flex;
+    gap: 10px;
+}
+
+    .password-row .text-input {
+        flex: 1;
+    }
+
+.generate-button {
+    flex: 0 0 auto;
+    border: 1px solid var(--border);
+    background: #F7F1E7;
+    color: var(--text-secondary);
+    padding: 0 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .generate-button:hover {
+        border-color: var(--rose);
+        color: var(--rose-button);
+    }
+
+.message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    margin-bottom: 18px;
+    border: 1px solid;
+    font-size: 13px;
+}
+
+.error-message {
+    background: #F6DDE2;
+    border-color: #E6B9C3;
+    color: #8A3F52;
+}
+
+.success-message {
+    background: #E4EEE5;
+    border-color: #C4D7C7;
+    color: #3D6446;
+}
+
+.message-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px;
+}
+
+.cancel-button,
+.create-button {
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+    .cancel-button:hover {
+        color: var(--text);
+        border-color: var(--input-border);
+    }
+
+.create-button {
+    border: 1px solid var(--rose-button);
+    background: var(--rose-button);
+    color: var(--white);
+}
+
+    .create-button:hover {
+        background: var(--rose-button-hover);
+        border-color: var(--rose-button-hover);
+    }
+
+@media (max-width: 720px) {
+    .page-shell {
+        width: min(100% - 24px, 600px);
+        padding-top: 25px;
+    }
+
+    .couple-grid,
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .password-row {
+        flex-direction: column;
+    }
+
+    .generate-button {
+        min-height: 44px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .cancel-button,
+    .create-button {
+        width: 100%;
+    }
+}
